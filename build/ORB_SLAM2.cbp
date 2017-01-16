@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="ORB_SLAM2" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\usr\;CMake Files\..\..\..\usr\share\;CMake Files\..\..\..\usr\share\OpenCV\;CMake Files\..\catkin_ws\;CMake Files\..\catkin_ws\src\;CMake Files\..\catkin_ws\src\Pangolin\;CMake Files\..\catkin_ws\src\Pangolin\build\;CMake Files\..\catkin_ws\src\Pangolin\build\src\;CMake Files\cmake_modules\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/wxf/ORB-SLAM2/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="ORB_SLAM2">
+         <Option output="/home/wxf/ORB-SLAM2/lib/libORB_SLAM2.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/wxf/ORB-SLAM2/build" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DCOMPILEDWITHC11" />
+            <Add directory="/home/wxf/ORB-SLAM2" />
+            <Add directory="/home/wxf/ORB-SLAM2/include" />
+            <Add directory="/home/wxf/catkin_ws/devel/include" />
+            <Add directory="/home/wxf/catkin_ws/src/Pangolin/build/src/include" />
+            <Add directory="/home/wxf/catkin_ws/src/Pangolin/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 ORB_SLAM2" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="ORB_SLAM2/fast">
+         <Option output="/home/wxf/ORB-SLAM2/lib/libORB_SLAM2.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/wxf/ORB-SLAM2/build" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DCOMPILEDWITHC11" />
+            <Add directory="/home/wxf/ORB-SLAM2" />
+            <Add directory="/home/wxf/ORB-SLAM2/include" />
+            <Add directory="/home/wxf/catkin_ws/devel/include" />
+            <Add directory="/home/wxf/catkin_ws/src/Pangolin/build/src/include" />
+            <Add directory="/home/wxf/catkin_ws/src/Pangolin/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 ORB_SLAM2/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="bin_vocabulary">
+         <Option output="/home/wxf/ORB-SLAM2/Vocabulary/bin_vocabulary" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/wxf/ORB-SLAM2/Vocabulary" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DCOMPILEDWITHC11" />
+            <Add directory="/home/wxf/ORB-SLAM2" />
+            <Add directory="/home/wxf/ORB-SLAM2/include" />
+            <Add directory="/home/wxf/catkin_ws/devel/include" />
+            <Add directory="/home/wxf/catkin_ws/src/Pangolin/build/src/include" />
+            <Add directory="/home/wxf/catkin_ws/src/Pangolin/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 bin_vocabulary" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="bin_vocabulary/fast">
+         <Option output="/home/wxf/ORB-SLAM2/Vocabulary/bin_vocabulary" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/wxf/ORB-SLAM2/Vocabulary" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DCOMPILEDWITHC11" />
+            <Add directory="/home/wxf/ORB-SLAM2" />
+            <Add directory="/home/wxf/ORB-SLAM2/include" />
+            <Add directory="/home/wxf/catkin_ws/devel/include" />
+            <Add directory="/home/wxf/catkin_ws/src/Pangolin/build/src/include" />
+            <Add directory="/home/wxf/catkin_ws/src/Pangolin/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 bin_vocabulary/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="mono_kitti">
+         <Option output="/home/wxf/ORB-SLAM2/build/mono_kitti" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/wxf/ORB-SLAM2/Vocabulary" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DCOMPILEDWITHC11" />
+            <Add directory="/home/wxf/ORB-SLAM2" />
+            <Add directory="/home/wxf/ORB-SLAM2/include" />
+            <Add directory="/home/wxf/catkin_ws/devel/include" />
+            <Add directory="/home/wxf/catkin_ws/src/Pangolin/build/src/include" />
+            <Add directory="/home/wxf/catkin_ws/src/Pangolin/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 mono_kitti" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="mono_kitti/fast">
+         <Option output="/home/wxf/ORB-SLAM2/build/mono_kitti" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/wxf/ORB-SLAM2/Vocabulary" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DCOMPILEDWITHC11" />
+            <Add directory="/home/wxf/ORB-SLAM2" />
+            <Add directory="/home/wxf/ORB-SLAM2/include" />
+            <Add directory="/home/wxf/catkin_ws/devel/include" />
+            <Add directory="/home/wxf/catkin_ws/src/Pangolin/build/src/include" />
+            <Add directory="/home/wxf/catkin_ws/src/Pangolin/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 mono_kitti/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="/home/wxf/ORB-SLAM2/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="stereo_EuRoC">
+         <Option output="/home/wxf/ORB-SLAM2/build/stereo_EuRoC" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/wxf/ORB-SLAM2/Vocabulary" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DCOMPILEDWITHC11" />
+            <Add directory="/home/wxf/ORB-SLAM2" />
+            <Add directory="/home/wxf/ORB-SLAM2/include" />
+            <Add directory="/home/wxf/catkin_ws/devel/include" />
+            <Add directory="/home/wxf/catkin_ws/src/Pangolin/build/src/include" />
+            <Add directory="/home/wxf/catkin_ws/src/Pangolin/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 stereo_EuRoC" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="stereo_EuRoC/fast">
+         <Option output="/home/wxf/ORB-SLAM2/build/stereo_EuRoC" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/wxf/ORB-SLAM2/Vocabulary" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DCOMPILEDWITHC11" />
+            <Add directory="/home/wxf/ORB-SLAM2" />
+            <Add directory="/home/wxf/ORB-SLAM2/include" />
+            <Add directory="/home/wxf/catkin_ws/devel/include" />
+            <Add directory="/home/wxf/catkin_ws/src/Pangolin/build/src/include" />
+            <Add directory="/home/wxf/catkin_ws/src/Pangolin/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 stereo_EuRoC/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="stereo_kitti">
+         <Option output="/home/wxf/ORB-SLAM2/build/stereo_kitti" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/wxf/ORB-SLAM2/Vocabulary" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DCOMPILEDWITHC11" />
+            <Add directory="/home/wxf/ORB-SLAM2" />
+            <Add directory="/home/wxf/ORB-SLAM2/include" />
+            <Add directory="/home/wxf/catkin_ws/devel/include" />
+            <Add directory="/home/wxf/catkin_ws/src/Pangolin/build/src/include" />
+            <Add directory="/home/wxf/catkin_ws/src/Pangolin/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 stereo_kitti" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="stereo_kitti/fast">
+         <Option output="/home/wxf/ORB-SLAM2/build/stereo_kitti" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/wxf/ORB-SLAM2/Vocabulary" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DCOMPILEDWITHC11" />
+            <Add directory="/home/wxf/ORB-SLAM2" />
+            <Add directory="/home/wxf/ORB-SLAM2/include" />
+            <Add directory="/home/wxf/catkin_ws/devel/include" />
+            <Add directory="/home/wxf/catkin_ws/src/Pangolin/build/src/include" />
+            <Add directory="/home/wxf/catkin_ws/src/Pangolin/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 stereo_kitti/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/wxf/ORB-SLAM2/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/wxf/ORB-SLAM2/Examples/Monocular/mono_kitti.cc">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/Examples/Stereo/stereo_EuRoC.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/Examples/Stereo/stereo_kitti.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/Vocabulary/bin_vocabulary.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/src/Converter.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/src/Frame.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/src/FrameDrawer.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/src/Initializer.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/src/KeyFrame.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/src/KeyFrameDatabase.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/src/LocalMapping.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/src/LoopClosing.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/src/Map.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/src/MapDrawer.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/src/MapPoint.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/src/ORBextractor.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/src/ORBmatcher.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/src/Optimizer.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/src/PnPsolver.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/src/Sim3Solver.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/src/System.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/src/Tracking.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/src/Viewer.cpp">
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/../../../usr/share/OpenCV/OpenCVConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\usr\share\OpenCV\" />
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/../../../usr/share/OpenCV/OpenCVConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\usr\share\OpenCV\" />
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/../../../usr/share/OpenCV/OpenCVModules.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\usr\share\OpenCV\" />
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/../../../usr/share/OpenCV/OpenCVModules-release.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\usr\share\OpenCV\" />
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/../catkin_ws/src/Pangolin/build/src/PangolinConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\catkin_ws\src\Pangolin\build\src\" />
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/../catkin_ws/src/Pangolin/build/src/PangolinConfig.cmake">
+          <Option virtualFolder="CMake Files\..\catkin_ws\src\Pangolin\build\src\" />
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/../catkin_ws/src/Pangolin/build/src/PangolinTargets.cmake">
+          <Option virtualFolder="CMake Files\..\catkin_ws\src\Pangolin\build\src\" />
+      </Unit>
+      <Unit filename="/home/wxf/ORB-SLAM2/cmake_modules/FindEigen3.cmake">
+          <Option virtualFolder="CMake Files\cmake_modules\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,5 @@
+/home/wxf/ORB-SLAM2/build/CMakeFiles/ORB_SLAM2.dir
+/home/wxf/ORB-SLAM2/build/CMakeFiles/bin_vocabulary.dir
+/home/wxf/ORB-SLAM2/build/CMakeFiles/mono_kitti.dir
+/home/wxf/ORB-SLAM2/build/CMakeFiles/stereo_EuRoC.dir
+/home/wxf/ORB-SLAM2/build/CMakeFiles/stereo_kitti.dir
