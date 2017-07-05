@@ -1215,6 +1215,8 @@ void Optimizer::OptimizeEssentialGraph(Map* pMap, KeyFrame* pLoopKF, KeyFrame* p
  *         + measurement：MapPoint在关键帧中的二维位置(u,v)
  *         + InfoMatrix: invSigma2(与特征点所在的尺度有关)
  *         
+ * 上述两种边还是利用了重投影误差，优化变量sim3。利用KF1的MapPoint重投影到KF2和KF2的MapPoint重投影到KF1来实现
+ *
  * @param pKF1        KeyFrame
  * @param pKF2        KeyFrame
  * @param vpMatches1  两个关键帧的匹配关系

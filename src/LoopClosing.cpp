@@ -176,6 +176,7 @@ bool LoopClosing::DetectLoop()
     // ConsistentGroup数据类型为pair<set<KeyFrame*>,int>
     // ConsistentGroup.first对应每个“连续组”中的关键帧，ConsistentGroup.second为每个“连续组”的序号
     vector<ConsistentGroup> vCurrentConsistentGroups;
+    //连续的关键帧才是可靠的
     vector<bool> vbConsistentGroup(mvConsistentGroups.size(),false);
     for(size_t i=0, iend=vpCandidateKFs.size(); i<iend; i++)
     {
@@ -270,6 +271,7 @@ bool LoopClosing::DetectLoop()
  * 注意以上匹配的结果均都存在成员变量mvpCurrentMatchedPoints中，
  * 实际的更新步骤见CorrectLoop()步骤3：Start Loop Fusion
  */
+//sim3用的的是两帧所对应的3D-MapPoint之间的对应关系取求R，t
 bool LoopClosing::ComputeSim3()
 {
     // For each consistent loop candidate we try to compute a Sim3
@@ -536,7 +538,7 @@ void LoopClosing::CorrectLoop()
     // 取出与当前帧相连的关键帧，包括当前关键帧
     mvpCurrentConnectedKFs = mpCurrentKF->GetVectorCovisibleKeyFrames();
     mvpCurrentConnectedKFs.push_back(mpCurrentKF);
-
+//分别存放粗略优化后的位姿和原始位姿
     KeyFrameAndPose CorrectedSim3, NonCorrectedSim3;
     // 先将mpCurrentKF的Sim3变换存入，固定不动
     CorrectedSim3[mpCurrentKF]=mg2oScw;
@@ -563,6 +565,7 @@ void LoopClosing::CorrectLoop()
                 cv::Mat tic = Tic.rowRange(0,3).col(3);
                 g2o::Sim3 g2oSic(Converter::toMatrix3d(Ric),Converter::toVector3d(tic),1.0);
                 // 当前帧的位姿固定不动，其它的关键帧根据相对关系得到Sim3调整的位姿
+                //这里更新了与当前帧相连的关键帧的位姿（通过sim3优化后的当前位姿与其之前的对应关系得到)
                 g2o::Sim3 g2oCorrectedSiw = g2oSic*mg2oScw;
                 // Pose corrected with the Sim3 of the loop closure
                 // 得到闭环g2o优化后各个关键帧的位姿
@@ -635,6 +638,7 @@ void LoopClosing::CorrectLoop()
         {
             if(mvpCurrentMatchedPoints[i])
             {
+                //pLoopMP是sim3优化后的3D点
                 MapPoint* pLoopMP = mvpCurrentMatchedPoints[i];
                 MapPoint* pCurMP = mpCurrentKF->GetMapPoint(i);
                 if(pCurMP)// 如果有重复的MapPoint（当前帧和匹配帧各有一个），则用匹配帧的代替现有的

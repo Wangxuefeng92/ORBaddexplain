@@ -106,7 +106,7 @@ protected:
     std::vector<size_t> mvAllIndices;
 
     // Projections
-    std::vector<cv::Mat> mvP1im1;
+    std::vector<cv::Mat> mvP1im1;//3D点在相机1下的像素点坐标
     std::vector<cv::Mat> mvP2im2;
 
     // RANSAC probability

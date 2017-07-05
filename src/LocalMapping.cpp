@@ -73,7 +73,7 @@ void LocalMapping::Run()
             //准则：1.本身是badflag的点
             //      2.tracking到的次数/看到的次数<0.25
             //      3.从该点建立到经过了2帧关键帧，观测到该点的次数少于要求值（说明该点很少见）
-            //      4.从建立开始，经过3帧关键帧而没有被剔除？？？？？
+            //      4.从建立开始，经过3帧关键帧而没有被剔除，说明是高质量点，不再检测加速过程
             MapPointCulling();
 
             // Triangulate new MapPoints

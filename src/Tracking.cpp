@@ -300,6 +300,7 @@ cv::Mat Tracking::GrabImageMonocular(const cv::Mat &im, const double &timestamp)
     // 步骤2：构造Frame
     if(mState==NOT_INITIALIZED || mState==NO_IMAGES_YET)// 没有成功初始化的前一个状态就是NO_IMAGES_YET
         //构造FRAME=求取当前帧的特征点和描述子，并在网格中确定特征点位置，此时3D点还没有生成
+        //初始化会提取更多的特征点
         mCurrentFrame = Frame(mImGray,timestamp,mpIniORBextractor,mpORBVocabulary,mK,mDistCoef,mbf,mThDepth);
     else
         mCurrentFrame = Frame(mImGray,timestamp,mpORBextractorLeft,mpORBVocabulary,mK,mDistCoef,mbf,mThDepth);
@@ -766,7 +767,9 @@ void Tracking::MonocularInitialization()
         // 步骤3：在mInitialFrame与mCurrentFrame中找匹配的特征点对
         // mvbPrevMatched为前一帧的特征点，存储了mInitialFrame中哪些点将进行接下来的匹配
         // mvIniMatches存储mInitialFrame,mCurrentFrame之间匹配的特征点
+        //（mvIniMatches的索引下标是当前帧的第i个特征点，内容三前一帧对应的特征点编号)
         ORBmatcher matcher(0.9,true);
+        //暴力匹配
         int nmatches = matcher.SearchForInitialization(mInitialFrame,mCurrentFrame,mvbPrevMatched,mvIniMatches,100);
 
         // Check if there are enough correspondences
@@ -851,6 +854,7 @@ void Tracking::CreateInitialMapMonocular()
         cv::Mat worldPos(mvIniP3D[i]);
 
         // 步骤4.1：用3D点构造MapPoint，pKFcur为MapPoint的参考帧
+        //注意:创建的是MapPoint的指针，MapPoint是被统一管理的，其他帧或者关键帧都是对MapPoint指针的引用
         MapPoint* pMP = new MapPoint(worldPos,pKFcur,mpMap);
 
         // 步骤4.2：为该MapPoint添加属性：
@@ -1157,7 +1161,7 @@ bool Tracking::TrackWithMotionModel()
         th=7;
 
     // 步骤2：根据匀速度模型进行对上一帧的MapPoints进行跟踪
-    // 根据上一帧特征点对应的3D点投影的位置缩小特征点匹配范围，并为当前帧添加MapPoints
+    // 根据上一帧特征点(2D)对应的3D点投影的位置缩小特征点匹配范围，并为当前帧添加MapPoints
     int nmatches = matcher.SearchByProjection(mCurrentFrame,mLastFrame,th,mSensor==System::MONOCULAR);
 
     // If few matches, uses a wider window search
@@ -1172,7 +1176,7 @@ bool Tracking::TrackWithMotionModel()
         return false;
 
     // Optimize frame pose with all matches
-    // 步骤3：优化位姿
+    // 步骤3：优化位姿(内部会进行4次优化)
     Optimizer::PoseOptimization(&mCurrentFrame);
 
     // Discard outliers

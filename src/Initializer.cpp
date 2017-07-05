@@ -149,7 +149,7 @@ bool Initializer::Initialize(const Frame &CurrentFrame, const vector<int> &vMatc
     else //if(pF_HF>0.6)
 	//输入：内点vbMatchesInliersF，F矩阵，内参矩阵mK
 	//输出：变换矩阵R21,t21，三维点坐标vP3D，三维点坐标可三角化的状态vbTriangulated
-        //要求有较大的视差角，有一定数量的可三角化的3D点，才返回true（初始化的要求）
+        //要求有较大的视差角(视差角大于1.0)，有一定数量的可三角化的3D点，才返回true（初始化的要求）
         return ReconstructF(vbMatchesInliersF,F,mK,R21,t21,vP3D,vbTriangulated,1.0,50);
 
     return false;
@@ -230,6 +230,7 @@ void Initializer::FindFundamental(vector<bool> &vbMatchesInliers, float &score, 
     // Normalize coordinates
     vector<cv::Point2f> vPn1, vPn2;
     cv::Mat T1, T2;
+    //归一化特征点到同一尺度（作为normalize DLT的输入），得到的T1,T2是为了后面重新恢复原始的特帧点尺度
     Normalize(mvKeys1,vPn1, T1);
     Normalize(mvKeys2,vPn2, T2);
     cv::Mat T2t = T2.t();
@@ -258,10 +259,11 @@ void Initializer::FindFundamental(vector<bool> &vbMatchesInliers, float &score, 
         }
 
         cv::Mat Fn = ComputeF21(vPn1i,vPn2i);
-
+        //F21i是恢复由之前Normalize函数处理的Fundamental矩阵
         F21i = T2t*Fn*T1;
 
         // 利用重投影误差为当次RANSAC的结果评分，并返回vbCurrentInliers内点
+        //利用Fundamental矩阵的公式，对两帧图像分别进行重投影
         currentScore = CheckFundamental(F21i, vbCurrentInliers, mSigma);
 
         if(currentScore>score)
@@ -958,7 +960,7 @@ void Initializer::Triangulate(const cv::KeyPoint &kp1, const cv::KeyPoint &kp2, 
 
 /**
  * ＠brief 归一化特征点到同一尺度（作为normalize DLT的输入）
- *
+ * @王雪锋说:为的是防止因为像素位置变化范围过大造成的求解精度降低
  * [x' y' 1]' = T * [x y 1]' \n
  * 归一化后x', y'的均值为0，sum(abs(x_i'-0))=1，sum(abs((y_i'-0))=1
  * 

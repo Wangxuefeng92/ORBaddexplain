@@ -326,7 +326,7 @@ int ORBmatcher::SearchByBoW(KeyFrame* pKF,Frame &F, vector<MapPoint*> &vpMapPoin
         int ind2=-1;
         int ind3=-1;
 
-        // 计算rotHist中最大的三个的index
+        // 计算rotHist中最大的三个的index(确定主流的旋转方向，理论上所有特征点都应该跟着主流旋转方向旋转)
         ComputeThreeMaxima(rotHist,HISTO_LENGTH,ind1,ind2,ind3);
 
         for(int i=0; i<HISTO_LENGTH; i++)
@@ -444,7 +444,7 @@ int ORBmatcher::SearchByProjection(KeyFrame* pKF, cv::Mat Scw, const vector<MapP
                 continue;
 
             const int &kpLevel= pKF->mvKeysUn[idx].octave;
-
+            //要在相近的尺度范围内
             if(kpLevel<nPredictedLevel-1 || kpLevel>nPredictedLevel)
                 continue;
 
@@ -470,7 +470,16 @@ int ORBmatcher::SearchByProjection(KeyFrame* pKF, cv::Mat Scw, const vector<MapP
 
     return nmatches;
 }
-
+///
+/// \brief ORBmatcher::SearchForInitialization
+/// \param F1
+/// \param F2
+/// \param vbPrevMatched
+/// \param vnMatches12
+/// \param windowSize
+/// \return
+///假设两帧之间的位移很小，所以在第1帧的特征的坐标对应到第二帧那个坐标附近也应该有一个对应的特征点
+/// 这里在初始化过程中，所以这份搜索范围有100x100(但这比整张图搜索要快)其实还是很暴力的
 int ORBmatcher::SearchForInitialization(Frame &F1, Frame &F2, vector<cv::Point2f> &vbPrevMatched, vector<int> &vnMatches12, int windowSize)
 {
     int nmatches=0;
@@ -526,8 +535,10 @@ int ORBmatcher::SearchForInitialization(Frame &F1, Frame &F2, vector<cv::Point2f
         }
 
         // 详见SearchByBoW(KeyFrame* pKF,Frame &F, vector<MapPoint*> &vpMapPointMatches)函数步骤4
+        //1、匹配的两个特征点距离小于阈值
         if(bestDist<=TH_LOW)
         {
+            //2、最好的特征点比第二个要好
             if(bestDist<(float)bestDist2*mfNNratio)
             {
                 if(vnMatches21[bestIdx2]>=0)
@@ -539,7 +550,7 @@ int ORBmatcher::SearchForInitialization(Frame &F1, Frame &F2, vector<cv::Point2f
                 vnMatches21[bestIdx2]=i1;
                 vMatchedDistance[bestIdx2]=bestDist;
                 nmatches++;
-
+                //统计所有特征点在两帧间旋转了的角度
                 if(mbCheckOrientation)
                 {
                     float rot = F1.mvKeysUn[i1].angle-F2.mvKeysUn[bestIdx2].angle;
@@ -555,7 +566,7 @@ int ORBmatcher::SearchForInitialization(Frame &F1, Frame &F2, vector<cv::Point2f
         }
 
     }
-
+//理论上所有特征点都应该是旋转了相同的角度，所以如果如果和主流旋转的角度不一样则是错误匹配
     if(mbCheckOrientation)
     {
         int ind1=-1;

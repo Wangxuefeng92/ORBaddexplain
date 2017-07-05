@@ -65,6 +65,7 @@ public:
     std::mutex mMutexPointCreation;
 
 protected:
+    //两个重要的地图管理集，全局管理地图
     std::set<MapPoint*> mspMapPoints; ///< MapPoints
     std::set<KeyFrame*> mspKeyFrames; ///< Keyframs
 
